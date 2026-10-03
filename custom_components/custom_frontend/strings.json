@@ -1,0 +1,19 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Custom Frontend",
+        "description": "Directory that holds one folder per page, each with a page.json.",
+        "data": {
+          "pages_dir": "Pages directory"
+        }
+      }
+    },
+    "error": {
+      "not_a_directory": "Home Assistant cannot find this directory."
+    },
+    "abort": {
+      "single_instance_allowed": "Custom Frontend is already configured."
+    }
+  }
+}
