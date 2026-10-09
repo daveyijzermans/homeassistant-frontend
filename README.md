@@ -6,6 +6,7 @@ Home Assistant integration that turns hand-authored pages into sidebar panels. A
 
 - Each page is a folder in the pages directory with a `page.json`. Every page becomes a panel at `/<url_path>`.
 - All panels use one small public loader script. The loader fetches the page bundle from `/api/custom_frontend/pages/<slug>/<entry>` with the user's token, imports it and mounts it.
+- An open page follows rebuilds: when the panel becomes visible again, and every five minutes while it is visible, the loader asks for the bundle with the ETag it loaded, and swaps in the new build when it changed. No reload or app restart is needed.
 - That API accepts only a Bearer token or a signed URL, serves only files inside the page's folder and skips dotfiles. Admin-only pages refuse other users.
 
 ## Install
